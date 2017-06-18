@@ -1,0 +1,25 @@
+language: ruby
+before_deploy:
+- zip -r latest *
+- test -d dpl_cd_upload || mkdir dpl_cd_upload
+- mv latest.zip dpl_cd_upload/latest.zip
+deploy:
+- provider: s3
+  access_key_id: AKIAIN4YZMW5Z5XSZXXQ
+  secret_access_key: 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
+  local_dir: dpl_cd_upload
+  skip_cleanup: true
+  region: &region ap-northeast-1
+  on:
+    branch: master
+  bucket: codedeploy-jimmy-test
+- provider: codedeploy
+  access_key_id: AKIAIN4YZMW5Z5XSZXXQ
+  secret_access_key: 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
+  bucket: codedeploy-jimmy-test
+  key: latest.zip
+  application: jimmy-ec2
+  deployment_group: master
+  region: *region
+  on:
+    branch: master

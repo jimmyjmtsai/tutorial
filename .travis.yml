@@ -18,7 +18,7 @@ deploy:
   secret_access_key: JBQvz0H3OMAZzTH4E3T+0hAy9Z+HpDo3GFRlFXSf
   bucket: codedeploy-jimmy-test
   key: latest.zip
-  application: jimmy-ec2
+  application: codedeploy-jimmy
   deployment_group: master
   region: *region
   on:

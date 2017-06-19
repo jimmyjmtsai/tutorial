@@ -5,8 +5,9 @@ before_deploy:
 - mv latest.zip dpl_cd_upload/latest.zip
 deploy:
 - provider: s3
-  access_key_id: AKIAIN4YZMW5Z5XSZXXQ
-  secret_access_key: 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
+  access_key_id: AKIAIV2VANOTA4XQNSQQ
+  secret_access_key: 
+    secret: $secret_key 
   local_dir: dpl_cd_upload
   skip_cleanup: true
   region: &region ap-northeast-1
@@ -14,8 +15,9 @@ deploy:
     branch: master
   bucket: codedeploy-jimmy-test
 - provider: codedeploy
-  access_key_id: AKIAIN4YZMW5Z5XSZXXQ
-  secret_access_key: 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
+  access_key_id: AKIAIV2VANOTA4XQNSQQ
+  secret_access_key: 
+    secret: $secret_key 
   bucket: codedeploy-jimmy-test
   key: latest.zip
   application: codedeploy-jimmy

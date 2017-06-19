@@ -1,2 +1,2 @@
 #!/bin/sh
-service httpd start
+service apache2 start

@@ -1,2 +1,2 @@
 #!/bin/sh
-service httpd stop 
+service apache2 stop 

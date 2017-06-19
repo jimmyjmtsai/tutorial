@@ -7,7 +7,7 @@ deploy:
 - provider: s3
   access_key_id: AKIAIV2VANOTA4XQNSQQ
   secret_access_key: 
-    secret: $secret_key 
+    secure: $secret_key 
   local_dir: dpl_cd_upload
   skip_cleanup: true
   region: &region ap-northeast-1
@@ -17,7 +17,7 @@ deploy:
 - provider: codedeploy
   access_key_id: AKIAIV2VANOTA4XQNSQQ
   secret_access_key: 
-    secret: $secret_key 
+    secure: $secret_key 
   bucket: codedeploy-jimmy-test
   key: latest.zip
   application: codedeploy-jimmy

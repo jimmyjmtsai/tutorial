@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: htdoc
-    destination: /var/www/html
+    destination: /var/www/htdocs/public
 hooks:
   ApplicationStop:
     - location: Scripts/ServiceStop.sh
